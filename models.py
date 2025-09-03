@@ -11,8 +11,8 @@ class Tarefa(db.Model):
     concluida = db.Column(db.Boolean, default=False)
     
     def to_dict(self):
-        return {
-            "id": self.id,
-            "titulo": self.titulo,
-            "concluida": self.concluida
+        return{
+            'id': self.id,
+            'titulo': self.titulo,
+            'concluida': self.concluida
         }
