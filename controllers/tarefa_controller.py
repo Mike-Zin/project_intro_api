@@ -19,13 +19,12 @@ class TarefaController:
         return nova_tarefa
     
     @staticmethod
-    def delete_remover_tarefa(tarefa_id: int):
+    def deletar_tarefa(tarefa_id: int) -> bool:
         tarefa = Tarefa.query.get(tarefa_id)
         if tarefa:
             db.session.delete(tarefa)
             db.session.commit()
             return True
-        return False
     
     @staticmethod
     def put_atualizar_tarefa(tarefa_id: int, dados: dict):
